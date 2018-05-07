@@ -23,7 +23,21 @@ $(function(){
 			octopus.currentCat=octopus.cats[current];
 			imgView.render();
 			});
-			buttonsView.render()},
+			$(".adminbutton").click(function(){
+				$("#setclicks").val(octopus.currentCat.clicks);
+				$("#name").val(octopus.currentCat.name);
+				$(".admin").show();
+			});
+			$("form").submit(function(event){
+				event.preventDefault();
+				octopus.currentCat.name=$("#name").val();
+				octopus.currentCat.clicks=parseInt($("#setclicks").val());
+				imgView.render();
+				buttonsView.render();
+				$(".admin").hide();
+			});
+			buttonsView.render();
+		},
 		
 		updateClicks: function(){
 			$(".image img").click(function(){
@@ -38,6 +52,7 @@ $(function(){
 
 	var buttonsView={
 		render: function(){
+			$(".buttons").empty();
 			octopus.cats.forEach(function(cat, index, arr){
 				var button = $('<button id=\"' +index+ '\">'+cat.name+'</button>');
 				$(".buttons").append(button);

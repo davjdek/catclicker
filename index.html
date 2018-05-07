@@ -1,10 +1,25 @@
 <html>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		  <link href="css/style.css" rel="stylesheet" type="text/css">
+
 	</head>
 	<body>
 		<div class="buttons"></div>
 		<div class="image"></div>
+		<button class="adminbutton">admin</button>
+		<div class="admin">
+		
+			<form>
+				<label for="name">Name: </label><input type="text" id="name">
+				<br>
+				<label for="setclicks">Clicks: </label><input type="number" id="setclicks">
+				<br>
+				<input type="submit" value="Submit">
+				<input type="reset" value="Cancel">
+			</form>
+		</div>
+		
 		<script src="js/script.js"></script>
 	</body>
 </html>
